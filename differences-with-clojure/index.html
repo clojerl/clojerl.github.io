@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Differences with Clojure - Clojerl</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Differences with Clojure";
+    var mkdocs_page_input_path = "differences-with-clojure.md";
+    var mkdocs_page_url = "/differences-with-clojure/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Clojerl</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">Clojerl</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../available-features/">Available Features</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Differences with Clojure</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#rationale">Rationale</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#state-and-identity">State and Identity</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#clojurespec">clojure.spec</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#dynamic-development">Dynamic Development</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#functional-programming">Functional Programming</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#lisp">Lisp</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#runtime-polymorphism">Runtime Polymorphism</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#concurrent-programming">Concurrent Programming</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#hosted-on-the-jvm">Hosted on the JVM</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#getting-started">Getting Started</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#the-reader">The Reader</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#the-repl-and-main">The REPL and main</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#evaluation">Evaluation</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#special-forms">Special Forms</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#macros">Macros</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#other-useful-functions-and-macros">Other Useful Functions and Macros</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#data-structures">Data Structures</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#datatypes">Datatypes</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#sequences">Sequences</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#transient-data-structures">Transient Data Structures</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#transducers">Transducers</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#multimethods-and-hierarchies">Multimethods and Hierarchies</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#metadata">Metadata</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#namespaces">Namespaces</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#libs">Libs</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#vars-and-the-global-environment">Vars and the Global Environment</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#refs-and-transactions">Refs and Transactions</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#agents">Agents</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#atoms">Atoms</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#reducers">Reducers</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#host-interop">Host Interop</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#ahead-of-time-compilation-and-class-generation">Ahead-of-time Compilation and Class Generation</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#other-included-libraries">Other Included Libraries</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Clojerl</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Differences with Clojure</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p>(This document was built using the
+<a href="https://clojurescript.org/about/differences">one from ClojureScript</a>
+as a guide).</p>
+<h2 id="rationale">Rationale</h2>
+<p>Erlang is a great language for building safe, reliable and scalable
+systems. It provides immutable, persistent data structures out of the
+box and its concurrency semantics are unequalled by any other
+language.</p>
+<p>Clojure is a Lisp and as such comes with all the goodies Lisps
+provide. Apart from these Clojure also introduces powerful
+abstractions such as protocols, multimethods and seqs, to name a few.</p>
+<p>Clojure was built to simplify the development of concurrent programs
+and some of its concurrency abstractions could be adapted to Erlang.
+It is fair to say that combining the power of the Erlang VM with the
+expressiveness of Clojure could provide an interesting, useful result
+to make the lives of many programmers simpler and make the world a
+happier place.</p>
+<h2 id="state-and-identity">State and Identity</h2>
+<p>The Erlang VM implements the actor model, which means <em>identity</em> is
+generally bound to a process which maintains an internal <em>state</em>. This
+doesn't mean that the Clojure identity model can't be implemented, but
+since the platform favors the actor model, it will always be more
+efficient using it than the Clojure model.</p>
+<h2 id="clojurespec">clojure.spec</h2>
+<p>Not implemented (yet).</p>
+<h2 id="dynamic-development">Dynamic Development</h2>
+<p>There is a REPL available just like Clojure's.</p>
+<h2 id="functional-programming">Functional Programming</h2>
+<p>Since the Erlang VM already includes native immutable data structures,
+Clojerl includes most of the immutable data structures as Clojure.
+Some of them are implemented based on other immutable data structures
+(e.g. sorted sets).</p>
+<h2 id="lisp">Lisp</h2>
+<p>Same as in Clojure.</p>
+<h2 id="runtime-polymorphism">Runtime Polymorphism</h2>
+<p>Protocols and multimethods are available as in Clojure. Everything is
+implemented in terms of protocols, there are no interfaces. <code>proxy</code> is
+not supported.</p>
+<h2 id="concurrent-programming">Concurrent Programming</h2>
+<p>TBD</p>
+<h2 id="hosted-on-the-jvm">Hosted on the JVM</h2>
+<p>Hosted on the Erlang VM.</p>
+<h2 id="getting-started">Getting Started</h2>
+<p><a href="https://github.com/jfacorro/clojerl#getting-started">Getting started</a>.</p>
+<h2 id="the-reader">The Reader</h2>
+<ul>
+<li>Numbers</li>
+<li>All integer numbers are mapped to Erlang's representation, which
+    are arbitrary precision integers.</li>
+<li>Numbers with a decimal part are mapped to Erlang's representation
+    of floating point numbers.</li>
+<li>Ratio and BigDecimal are not supported.</li>
+<li>Characters are represented as single-character strings.</li>
+<li><code>nil</code> is currently mapped to the <code>:undefined</code> keyword. This is
+    because <code>:undefined</code> is generally used in Erlang to specify
+    'nothing/no-value'.</li>
+<li><code>true</code> and <code>false</code> are equivalent to <code>:true</code> and <code>:false</code>
+  respectively.</li>
+<li>Lists, Vectors, Maps and Sets are the same as in Clojure. There is
+  no support yet for the 'Map namespace syntax'.</li>
+<li>Macro characters</li>
+<li>Because there is no character type in Erlang, <code>\</code> produces a
+    single-character string.</li>
+</ul>
+<h2 id="the-repl-and-main">The REPL and main</h2>
+<ul>
+<li>The <code>bin/clojure.main</code> script shows how it is possible to use
+  the features provided by the <code>clojure.main</code> namespace.</li>
+<li>The socket-based REPL is currently not available.</li>
+</ul>
+<h2 id="evaluation">Evaluation</h2>
+<ul>
+<li>Clojerl has the same evaluation rules as Clojure.</li>
+</ul>
+<h2 id="special-forms">Special Forms</h2>
+<p>The following ClojureScript special forms are identical to their
+Clojure cousins: <code>if</code>, <code>do</code>, <code>let</code>, <code>letfn</code>, <code>quote</code> and <code>loop</code>.</p>
+<ul>
+<li><code>fn</code></li>
+<li>Compile to an Erlang function and therefore can't have any
+    metadata.</li>
+<li><code>recur</code></li>
+<li><code>recur</code> is compiled to an actual recursive call that is only
+    allowed in tail position, since the Erlang VM implements tail call
+    optimization.</li>
+<li><code>def</code></li>
+<li>When the init expression is a <code>fn</code>, <code>def</code> produces one or more
+    Erlang functions, depending on the arities specified in the <code>fn</code>
+    declaration.</li>
+<li>When not an <code>fn</code>, the init expression (<strong>which is evaluated at
+    compile-time</strong>) <em>must</em> return a constant literal, otherwise it's a
+    compile-time error.</li>
+<li><code>throw</code></li>
+<li>There is no error type in Erlang, any value can be thrown.</li>
+<li><code>try..catch..finally</code></li>
+<li>An exception in Erlang consists of three things: the class of the
+    exception (<code>throw</code>, <code>error</code> or <code>exit</code>), the exit reason and the
+    stack-trace. There is no specific type for exceptions.</li>
+<li>The spec for the <code>catch</code> clause is <code>(catch error-type error &amp;
+    body)</code>, where <code>error-type</code> is one of the keywords <code>:throw</code>,
+    <code>:error</code>, <code>:exit</code> or <code>_</code>. The last one will catch all the error
+    types.</li>
+<li><code>var</code></li>
+<li>Vars are not reified as in Clojure, they are more similar to what
+    ClojureScript does, which returns compile time information about
+    the var.</li>
+<li><code>monitor-enter</code>, <code>monitor-exit</code>, and <code>locking</code> are not implemented.</li>
+</ul>
+<h2 id="macros">Macros</h2>
+<p>Macro in Clojerl work the same as in Clojure.</p>
+<h2 id="other-useful-functions-and-macros">Other Useful Functions and Macros</h2>
+<ul>
+<li>Regex support is the one provided by the <code>re</code> Erlang module.</li>
+</ul>
+<h2 id="data-structures">Data Structures</h2>
+<ul>
+<li><code>nil</code>'s type is <code>clojerl.Nil</code>. It is equivalent to <code>:undefined</code>.</li>
+<li>Numbers</li>
+<li>All integers are Erlang integers (arbitrary precision).</li>
+<li>Strings are UTF-8 encoded Erlang binaries.</li>
+<li>Characters are single-char strings.</li>
+<li>Collections</li>
+<li>Clojerl uses the same hash computations as Clojure.</li>
+<li>When possible the native Erlang data structure is used (i.e. map,
+    list, tuple).<ul>
+<li>List uses an Erlang list.</li>
+<li>Vector uses the <code>array</code> Erlang module.</li>
+<li>Map uses an Erlang map.</li>
+<li>Sorted Maps use Robert Virding's implementation of red-black
+  trees.</li>
+<li>Sets use Erlang maps.</li>
+<li>StructMap and ArrayMap are currently not implemented.</li>
+</ul>
+</li>
+</ul>
+<h2 id="datatypes">Datatypes</h2>
+<ul>
+<li><code>defprotocol</code> and <code>deftype</code>, <code>extend-type</code>, <code>extend-protocol</code> work as in Clojure.</li>
+<li>Protocols are not reified as in Clojure, there are no runtime protocol objects.</li>
+<li>Some reflective capabilities (<code>satisfies?</code>) work as in Clojure.</li>
+<li><code>extend</code> is not implemented.</li>
+<li><code>reify</code> is not implemented.</li>
+</ul>
+<h2 id="sequences">Sequences</h2>
+<ul>
+<li>Seqs are the same as in Clojure.</li>
+</ul>
+<h2 id="transient-data-structures">Transient Data Structures</h2>
+<p>Transients are currently not implemeted.</p>
+<h2 id="transducers">Transducers</h2>
+<p>Transducers are currently not implemeted.</p>
+<h2 id="multimethods-and-hierarchies">Multimethods and Hierarchies</h2>
+<ul>
+<li>Multimethods works as in Clojure.</li>
+<li>Hierarchies are not implemented.</li>
+</ul>
+<h2 id="metadata">Metadata</h2>
+<p>Works as in Clojure for all the same data structures, except for
+<code>fn</code>s.</p>
+<p>Anonymous functions are compiled into Erlang closures, for which there
+is no way to bolt arbitrary information.</p>
+<h2 id="namespaces">Namespaces</h2>
+<p>Namespaces are compiled into Erlang modules. They are available at
+runtime for inspection, as in Clojure.</p>
+<h2 id="libs">Libs</h2>
+<p>Existing Clojure libs will have to conform to the Clojerl subset
+in order to work in Clojerl.</p>
+<h2 id="vars-and-the-global-environment">Vars and the Global Environment</h2>
+<ul>
+<li>Vars (i.e. <code>def</code>, <code>binding</code> and <code>set!</code>) work as in Clojure.</li>
+<li>Atoms, Refs and Agents are not currently implemented.</li>
+</ul>
+<h2 id="refs-and-transactions">Refs and Transactions</h2>
+<p>Refs and Transactions are not implemented.</p>
+<h2 id="agents">Agents</h2>
+<p>Agents are not implemented.</p>
+<h2 id="atoms">Atoms</h2>
+<p>Atoms are not implemented.</p>
+<h2 id="reducers">Reducers</h2>
+<p>Reducers are not implemented.</p>
+<h2 id="host-interop">Host Interop</h2>
+<ul>
+<li>Member access</li>
+<li>All types in Clojerl have an implementation module with the same
+    name as the type. "Member access" is translated to a function call
+    to the specified function in the type's module where the first
+    argument is the value.</li>
+<li>Type Hinting</li>
+<li>There are no primitive types in Erlang so there is no use for
+  <code>int</code>, <code>ints</code>, etc.</li>
+<li>Type hints are used to resolve the target's type at compile-time
+    and avoid having to figure out at run-time.</li>
+<li>Simple XML support is currently not implemented.</li>
+<li>Calling Clojerl from Erlang</li>
+<li>
+<p>Since Clojerl namespaces are Erlang modules, calling a function
+    from the <code>clojure.core</code> module is as simple as:</p>
+<p><code>'clojure.core':inc(1).
+%%= 2</code></p>
+</li>
+</ul>
+<h2 id="ahead-of-time-compilation-and-class-generation">Ahead-of-time Compilation and Class Generation</h2>
+<ul>
+<li>Each namespace is generally compiled into one Erlang module, except
+  when <code>defrecord</code>, <code>deftype</code> or one of the <code>extend-*</code> functions is
+  used.</li>
+<li><code>gen-class</code>, <code>gen-interface</code>, etc. are unnecessary and unimplemented in
+  Clojerl.</li>
+</ul>
+<h2 id="other-included-libraries">Other Included Libraries</h2>
+<ul>
+<li><code>clojure.erlang.io</code> is an attempt to provide the same polymorphic
+  I/O utility functions for Erlang.</li>
+<li><code>clojure.erlang.erldocs</code> (Missing)</li>
+<li><code>clojure.erlang.shell</code> (Missing)</li>
+<li><code>clojure.repl</code></li>
+<li><code>clojure.set</code></li>
+<li><code>clojure.string</code></li>
+<li><code>clojure.test</code></li>
+<li><code>clojure.walk</code></li>
+<li><code>clojure.xml</code></li>
+<li><code>clojure.zip</code></li>
+<li><code>clojure.core.reducers</code> (Missing)</li>
+<li><code>clojure.spec</code> (Missing)</li>
+<li><code>clojure.pprint</code></li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../available-features/" class="btn btn-neutral" title="Available Features"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../available-features/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+    <script src="../js/theme.js"></script>
+
+</body>
+</html>

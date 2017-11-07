@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Available Features - Clojerl</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Available Features";
+    var mkdocs_page_input_path = "available-features.md";
+    var mkdocs_page_url = "/available-features/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Clojerl</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">Clojerl</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Available Features</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#implemented">Implemented</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#missing">Missing</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#unsupported">Unsupported</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../differences-with-clojure/">Differences with Clojure</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Clojerl</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Available Features</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p>We provide here a list of the features that are already implemented and
+available, the ones that are still missing and those that can't or won't be
+supported.</p>
+<p>For a detailed list on the differences between Clojerl and Clojure please check
+<a href="../differences-with-clojure">here</a>.</p>
+<h1 id="implemented">Implemented</h1>
+<ul>
+<li><strong>Special Forms</strong><ul>
+<li>Clojure: <code>def</code>, <code>do</code>, <code>fn*</code>, <code>if</code>, <code>quote</code>, <code>let*</code>, <code>letfn*</code>, <code>loop*</code>,
+  <code>recur</code>, <code>case*</code>, <code>throw</code>, <code>try</code>, <code>var</code>, <code>import*</code>, <code>new</code>, <code>deftype*</code>,
+  <code>defprotocol*</code>, <code>extend-type*</code>, <code>.</code></li>
+<li>Erlang: <code>receive*</code>, <code>erl-binary*</code>, <code>erl-list*</code>, <code>erl-alias*</code>,
+  <code>erl-on-load*</code></li>
+</ul>
+</li>
+<li><strong>Multi-method</strong></li>
+<li><strong>Data Structures</strong><ul>
+<li>Clojure<ul>
+<li>ChunkedCons</li>
+<li>Cons</li>
+<li>LazySeq</li>
+<li>List</li>
+<li>Map</li>
+<li>Range</li>
+<li>Set</li>
+<li>SortedSet</li>
+<li>SortedMap</li>
+<li>Vector</li>
+<li>Vector.ChunkedSeq</li>
+</ul>
+</li>
+<li>Erlang<ul>
+<li>Map</li>
+<li>List</li>
+<li>Tuple</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Concurrency</strong><ul>
+<li>Atom (naive implementation)</li>
+</ul>
+</li>
+<li><strong>Clojure Libraries</strong><ul>
+<li><code>clojure.core</code></li>
+<li><code>clojure.core.server</code></li>
+<li><code>clojure.data</code></li>
+<li><code>clojure.erlang.io</code></li>
+<li><code>clojure.instant</code></li>
+<li><code>clojure.repl</code></li>
+<li><code>clojure.main</code></li>
+<li><code>clojure.pprint</code></li>
+<li><code>clojure.set</code></li>
+<li><code>clojure.stacktrace</code></li>
+<li><code>clojure.string</code></li>
+<li><code>clojure.template</code></li>
+<li><code>clojure.test</code></li>
+<li><code>clojure.uuid</code></li>
+<li><code>clojure.walk</code></li>
+<li><code>clojure.xml</code></li>
+<li><code>clojure.zip</code></li>
+</ul>
+</li>
+</ul>
+<h1 id="missing">Missing</h1>
+<ul>
+<li><strong>Multi-method</strong><ul>
+<li>Hierarchies</li>
+</ul>
+</li>
+<li><strong>Concurrency</strong><ul>
+<li>Ref</li>
+<li>Agent</li>
+<li>Delay</li>
+<li>Future</li>
+<li>Promise</li>
+</ul>
+</li>
+<li><strong>Data Structures</strong><ul>
+<li>StructMaps</li>
+<li>Map namespace syntax</li>
+</ul>
+</li>
+<li><strong>Transducers</strong></li>
+<li><strong>Clojure Libraries</strong><ul>
+<li><code>clojure.edn</code></li>
+<li><code>clojure.erlang.erldocs</code></li>
+<li><code>clojure.erlang.shell</code></li>
+<li><code>clojure.core.reducers</code></li>
+<li><code>clojure.spec</code></li>
+</ul>
+</li>
+</ul>
+<h1 id="unsupported">Unsupported</h1>
+<ul>
+<li><strong>Concurrency</strong><ul>
+<li>Volatile</li>
+</ul>
+</li>
+<li><strong>Data Structures</strong><ul>
+<li>Transient collections</li>
+</ul>
+</li>
+<li><strong>Math</strong><ul>
+<li>unchecked</li>
+</ul>
+</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../differences-with-clojure/" class="btn btn-neutral float-right" title="Differences with Clojure">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href=".." class="btn btn-neutral" title="Clojerl"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../differences-with-clojure/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../js/theme.js"></script>
+
+</body>
+</html>
