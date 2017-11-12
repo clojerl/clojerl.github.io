@@ -1,6 +1,14 @@
 site_name: Clojerl
-theme: material
+theme:
+  name: material
+  palette:
+    primary: 'red'
+    accent: 'blue'
+repo_name: clojerl/clojerl
+repo_url: https://github.com/clojerl/clojerl
+edit_uri: ''
 pages:
   - Clojerl                  : index.md
+  - Getting Started          : getting-started.md
   - Available Features       : available-features.md
   - Differences with Clojure : differences-with-clojure.md

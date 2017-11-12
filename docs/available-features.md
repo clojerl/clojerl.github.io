@@ -1,3 +1,5 @@
+# Available Features
+
 We provide here a list of the features that are already implemented and
 available, the ones that are still missing and those that can't or won't be
 supported.
@@ -5,7 +7,7 @@ supported.
 For a detailed list on the differences between Clojerl and Clojure please check
 [here](differences-with-clojure).
 
-# Implemented
+## Implemented
 
 - **Special Forms**
     - Clojure: `def`, `do`, `fn*`, `if`, `quote`, `let*`, `letfn*`, `loop*`,
@@ -52,7 +54,7 @@ For a detailed list on the differences between Clojerl and Clojure please check
     - `clojure.xml`
     - `clojure.zip`
 
-# Missing
+## Missing
 
 - **Multi-method**
     - Hierarchies
@@ -73,7 +75,7 @@ For a detailed list on the differences between Clojerl and Clojure please check
     - `clojure.core.reducers`
     - `clojure.spec`
 
-# Unsupported
+## Unsupported
 
 - **Concurrency**
     - Volatile
