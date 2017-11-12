@@ -1,5 +1,5 @@
 site_name: Clojerl
-theme: readthedocs
+theme: material
 pages:
   - Clojerl                  : index.md
   - Available Features       : available-features.md
