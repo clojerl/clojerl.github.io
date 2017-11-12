@@ -27,22 +27,22 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <link rel="shortcut icon" href="/assets/images/favicon.png">
       <meta name="generator" content="mkdocs-0.17.1, mkdocs-material-2.0.4">
     
     
       
-        <title>Available Features - Clojerl</title>
+        <title>Clojerl</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/application-709eec9410.css">
+      <link rel="stylesheet" href="/assets/stylesheets/application-709eec9410.css">
       
-        <link rel="stylesheet" href="../assets/stylesheets/application-23f75ab9c7.palette.css">
+        <link rel="stylesheet" href="/assets/stylesheets/application-23f75ab9c7.palette.css">
       
     
     
-      <script src="../assets/javascripts/modernizr-e826f8942a.js"></script>
+      <script src="/assets/javascripts/modernizr-e826f8942a.js"></script>
     
     
       
@@ -77,7 +77,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href=".." title="Clojerl" class="md-header-nav__button md-logo">
+        <a href="/" title="Clojerl" class="md-header-nav__button md-logo">
           
             <i class="md-icon"></i>
           
@@ -90,9 +90,7 @@
         <span class="md-flex__ellipsis md-header-nav__title">
           
             
-              
-            
-            Available Features
+            Clojerl
           
         </span>
       </div>
@@ -202,7 +200,7 @@
 
 
   <li class="md-nav__item">
-    <a href=".." title="Clojerl" class="md-nav__link">
+    <a href="/" title="Clojerl" class="md-nav__link">
       Clojerl
     </a>
   </li>
@@ -214,7 +212,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../getting-started/" title="Getting Started" class="md-nav__link">
+    <a href="/getting-started/" title="Getting Started" class="md-nav__link">
       Getting Started
     </a>
   </li>
@@ -224,61 +222,11 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="toc">
-        Available Features
-      </label>
-    
-    <a href="./" title="Available Features" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="/available-features/" title="Available Features" class="md-nav__link">
       Available Features
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#implemented" title="Implemented" class="md-nav__link">
-    Implemented
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#missing" title="Missing" class="md-nav__link">
-    Missing
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#unsupported" title="Unsupported" class="md-nav__link">
-    Unsupported
-  </a>
-  
-</li>
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
     
@@ -288,7 +236,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../differences-with-clojure/" title="Differences with Clojure" class="md-nav__link">
+    <a href="/differences-with-clojure/" title="Differences with Clojure" class="md-nav__link">
       Differences with Clojure
     </a>
   </li>
@@ -301,168 +249,12 @@
               </div>
             
             
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#implemented" title="Implemented" class="md-nav__link">
-    Implemented
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#missing" title="Missing" class="md-nav__link">
-    Missing
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#unsupported" title="Unsupported" class="md-nav__link">
-    Unsupported
-  </a>
-  
-</li>
-      
-      
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
-                
-                
-                <h1 id="available-features">Available Features</h1>
-<p>We provide here a list of the features that are already implemented and
-available, the ones that are still missing and those that can't or won't be
-supported.</p>
-<p>For a detailed list on the differences between Clojerl and Clojure please check
-<a href="../differences-with-clojure">here</a>.</p>
-<h2 id="implemented">Implemented</h2>
-<ul>
-<li><strong>Special Forms</strong><ul>
-<li>Clojure: <code>def</code>, <code>do</code>, <code>fn*</code>, <code>if</code>, <code>quote</code>, <code>let*</code>, <code>letfn*</code>, <code>loop*</code>,
-  <code>recur</code>, <code>case*</code>, <code>throw</code>, <code>try</code>, <code>var</code>, <code>import*</code>, <code>new</code>, <code>deftype*</code>,
-  <code>defprotocol*</code>, <code>extend-type*</code>, <code>.</code></li>
-<li>Erlang: <code>receive*</code>, <code>erl-binary*</code>, <code>erl-list*</code>, <code>erl-alias*</code>,
-  <code>erl-on-load*</code></li>
-</ul>
-</li>
-<li><strong>Multi-method</strong></li>
-<li><strong>Data Structures</strong><ul>
-<li>Clojure<ul>
-<li>ChunkedCons</li>
-<li>Cons</li>
-<li>LazySeq</li>
-<li>List</li>
-<li>Map</li>
-<li>Range</li>
-<li>Set</li>
-<li>SortedSet</li>
-<li>SortedMap</li>
-<li>Vector</li>
-<li>Vector.ChunkedSeq</li>
-</ul>
-</li>
-<li>Erlang<ul>
-<li>Map</li>
-<li>List</li>
-<li>Tuple</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><strong>Concurrency</strong><ul>
-<li>Atom (naive implementation)</li>
-</ul>
-</li>
-<li><strong>Clojure Libraries</strong><ul>
-<li><code>clojure.core</code></li>
-<li><code>clojure.core.server</code></li>
-<li><code>clojure.data</code></li>
-<li><code>clojure.erlang.io</code></li>
-<li><code>clojure.instant</code></li>
-<li><code>clojure.repl</code></li>
-<li><code>clojure.main</code></li>
-<li><code>clojure.pprint</code></li>
-<li><code>clojure.set</code></li>
-<li><code>clojure.stacktrace</code></li>
-<li><code>clojure.string</code></li>
-<li><code>clojure.template</code></li>
-<li><code>clojure.test</code></li>
-<li><code>clojure.uuid</code></li>
-<li><code>clojure.walk</code></li>
-<li><code>clojure.xml</code></li>
-<li><code>clojure.zip</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="missing">Missing</h2>
-<ul>
-<li><strong>Multi-method</strong><ul>
-<li>Hierarchies</li>
-</ul>
-</li>
-<li><strong>Concurrency</strong><ul>
-<li>Ref</li>
-<li>Agent</li>
-<li>Delay</li>
-<li>Future</li>
-<li>Promise</li>
-</ul>
-</li>
-<li><strong>Data Structures</strong><ul>
-<li>StructMaps</li>
-<li>Map namespace syntax</li>
-</ul>
-</li>
-<li><strong>Transducers</strong></li>
-<li><strong>Clojure Libraries</strong><ul>
-<li><code>clojure.edn</code></li>
-<li><code>clojure.erlang.erldocs</code></li>
-<li><code>clojure.erlang.shell</code></li>
-<li><code>clojure.core.reducers</code></li>
-<li><code>clojure.spec</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="unsupported">Unsupported</h2>
-<ul>
-<li><strong>Concurrency</strong><ul>
-<li>Volatile</li>
-</ul>
-</li>
-<li><strong>Data Structures</strong><ul>
-<li>Transient collections</li>
-</ul>
-</li>
-<li><strong>Math</strong><ul>
-<li>unchecked</li>
-</ul>
-</li>
-</ul>
-                
-                  
-                
-              
+  <h1>404 - Not found</h1>
+
               
                 
               
@@ -473,41 +265,6 @@ supported.</p>
       
         
 <footer class="md-footer">
-  
-    <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid">
-        
-          <a href="../getting-started/" title="Getting Started" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
-            </div>
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Previous
-                </span>
-                Getting Started
-              </span>
-            </div>
-          </a>
-        
-        
-          <a href="../differences-with-clojure/" title="Differences with Clojure" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                Differences with Clojure
-              </span>
-            </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
-          </a>
-        
-      </nav>
-    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -528,9 +285,9 @@ supported.</p>
       
     </div>
     
-      <script src="../assets/javascripts/application-8e4952e681.js"></script>
+      <script src="/assets/javascripts/application-8e4952e681.js"></script>
       
-      <script>app.initialize({version:"0.17.1",url:{base:".."}})</script>
+      <script>app.initialize({version:"0.17.1",url:{base:""}})</script>
       
     
     

@@ -32,7 +32,7 @@
     
     
       
-        <title>Available Features - Clojerl</title>
+        <title>Getting Started - Clojerl</title>
       
     
     
@@ -92,7 +92,7 @@
             
               
             
-            Available Features
+            Getting Started
           
         </span>
       </div>
@@ -212,18 +212,6 @@
       
       
 
-
-  <li class="md-nav__item">
-    <a href="../getting-started/" title="Getting Started" class="md-nav__link">
-      Getting Started
-    </a>
-  </li>
-
-    
-      
-      
-      
-
   
 
 
@@ -234,51 +222,22 @@
       
     
     
-      <label class="md-nav__link md-nav__link--active" for="toc">
-        Available Features
-      </label>
-    
-    <a href="./" title="Available Features" class="md-nav__link md-nav__link--active">
-      Available Features
+    <a href="./" title="Getting Started" class="md-nav__link md-nav__link--active">
+      Getting Started
     </a>
     
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
+  </li>
+
     
-  
-  
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#implemented" title="Implemented" class="md-nav__link">
-    Implemented
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#missing" title="Missing" class="md-nav__link">
-    Missing
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#unsupported" title="Unsupported" class="md-nav__link">
-    Unsupported
-  </a>
-  
-</li>
       
       
       
-    </ul>
-  
-</nav>
-    
+
+
+  <li class="md-nav__item">
+    <a href="../available-features/" title="Available Features" class="md-nav__link">
+      Available Features
+    </a>
   </li>
 
     
@@ -311,34 +270,6 @@
     
   
   
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#implemented" title="Implemented" class="md-nav__link">
-    Implemented
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#missing" title="Missing" class="md-nav__link">
-    Missing
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#unsupported" title="Unsupported" class="md-nav__link">
-    Unsupported
-  </a>
-  
-</li>
-      
-      
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -350,115 +281,19 @@
               
                 
                 
-                <h1 id="available-features">Available Features</h1>
-<p>We provide here a list of the features that are already implemented and
-available, the ones that are still missing and those that can't or won't be
-supported.</p>
-<p>For a detailed list on the differences between Clojerl and Clojure please check
-<a href="../differences-with-clojure">here</a>.</p>
-<h2 id="implemented">Implemented</h2>
-<ul>
-<li><strong>Special Forms</strong><ul>
-<li>Clojure: <code>def</code>, <code>do</code>, <code>fn*</code>, <code>if</code>, <code>quote</code>, <code>let*</code>, <code>letfn*</code>, <code>loop*</code>,
-  <code>recur</code>, <code>case*</code>, <code>throw</code>, <code>try</code>, <code>var</code>, <code>import*</code>, <code>new</code>, <code>deftype*</code>,
-  <code>defprotocol*</code>, <code>extend-type*</code>, <code>.</code></li>
-<li>Erlang: <code>receive*</code>, <code>erl-binary*</code>, <code>erl-list*</code>, <code>erl-alias*</code>,
-  <code>erl-on-load*</code></li>
-</ul>
-</li>
-<li><strong>Multi-method</strong></li>
-<li><strong>Data Structures</strong><ul>
-<li>Clojure<ul>
-<li>ChunkedCons</li>
-<li>Cons</li>
-<li>LazySeq</li>
-<li>List</li>
-<li>Map</li>
-<li>Range</li>
-<li>Set</li>
-<li>SortedSet</li>
-<li>SortedMap</li>
-<li>Vector</li>
-<li>Vector.ChunkedSeq</li>
-</ul>
-</li>
-<li>Erlang<ul>
-<li>Map</li>
-<li>List</li>
-<li>Tuple</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><strong>Concurrency</strong><ul>
-<li>Atom (naive implementation)</li>
-</ul>
-</li>
-<li><strong>Clojure Libraries</strong><ul>
-<li><code>clojure.core</code></li>
-<li><code>clojure.core.server</code></li>
-<li><code>clojure.data</code></li>
-<li><code>clojure.erlang.io</code></li>
-<li><code>clojure.instant</code></li>
-<li><code>clojure.repl</code></li>
-<li><code>clojure.main</code></li>
-<li><code>clojure.pprint</code></li>
-<li><code>clojure.set</code></li>
-<li><code>clojure.stacktrace</code></li>
-<li><code>clojure.string</code></li>
-<li><code>clojure.template</code></li>
-<li><code>clojure.test</code></li>
-<li><code>clojure.uuid</code></li>
-<li><code>clojure.walk</code></li>
-<li><code>clojure.xml</code></li>
-<li><code>clojure.zip</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="missing">Missing</h2>
-<ul>
-<li><strong>Multi-method</strong><ul>
-<li>Hierarchies</li>
-</ul>
-</li>
-<li><strong>Concurrency</strong><ul>
-<li>Ref</li>
-<li>Agent</li>
-<li>Delay</li>
-<li>Future</li>
-<li>Promise</li>
-</ul>
-</li>
-<li><strong>Data Structures</strong><ul>
-<li>StructMaps</li>
-<li>Map namespace syntax</li>
-</ul>
-</li>
-<li><strong>Transducers</strong></li>
-<li><strong>Clojure Libraries</strong><ul>
-<li><code>clojure.edn</code></li>
-<li><code>clojure.erlang.erldocs</code></li>
-<li><code>clojure.erlang.shell</code></li>
-<li><code>clojure.core.reducers</code></li>
-<li><code>clojure.spec</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="unsupported">Unsupported</h2>
-<ul>
-<li><strong>Concurrency</strong><ul>
-<li>Volatile</li>
-</ul>
-</li>
-<li><strong>Data Structures</strong><ul>
-<li>Transient collections</li>
-</ul>
-</li>
-<li><strong>Math</strong><ul>
-<li>unchecked</li>
-</ul>
-</li>
-</ul>
+                <h1 id="getting-started">Getting Started</h1>
+<p>Build <code>clojerl</code> from source (requires <em>Erlang/OTP 18+</em> and <em>rebar3</em>):</p>
+<pre><code>git clone https://github.com/jfacorro/clojerl
+cd clojerl
+make
+</code></pre>
+<p>Running <code>make repl</code> will start the REPL and show its prompt:</p>
+<pre><code>Clojure 0.0.0-974.592ad8a
+clje.user=&gt;
+</code></pre>
+<p>Or alternatively you can use the <code>bin/clojerl</code> command for the same purpose:</p>
+<pre><code>bin/clojerl --clojure.main -r
+</code></pre>
                 
                   
                 
@@ -477,7 +312,7 @@ supported.</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../getting-started/" title="Getting Started" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href=".." title="Clojerl" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -486,19 +321,19 @@ supported.</p>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Getting Started
+                Clojerl
               </span>
             </div>
           </a>
         
         
-          <a href="../differences-with-clojure/" title="Differences with Clojure" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../available-features/" title="Available Features" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Differences with Clojure
+                Available Features
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
