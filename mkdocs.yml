@@ -1,6 +1,8 @@
 site_name: Clojerl
 theme:
   name: material
+  logo: 'images/logo.svg'
+  favicon: 'images/favicon.png'
   palette:
     primary: 'red'
     accent: 'blue'
