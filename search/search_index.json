@@ -12,12 +12,12 @@
         }, 
         {
             "location": "/getting-started/", 
-            "text": "Getting Started\n\n\nBuild \nclojerl\n from source (requires \nErlang/OTP 18+\n and \nrebar3\n):\n\n\ngit clone https://github.com/jfacorro/clojerl\ncd clojerl\nmake\n\n\n\nRunning \nmake repl\n will start the REPL and show its prompt:\n\n\nClojure 0.0.0-974.592ad8a\nclje.user=\n\n\n\n\nOr alternatively you can use the \nbin/clojerl\n command for the same purpose:\n\n\nbin/clojerl --clojure.main -r", 
+            "text": "Getting Started\n\n\nBuild \nclojerl\n from source (requires \nErlang/OTP 18+\n and \nrebar3\n):\n\n\ngit clone https://github.com/jfacorro/clojerl\ncd clojerl\nmake\n\n\n\nRunning \nmake repl\n will start the REPL and show its prompt:\n\n\nClojure 0.0.0-974.592ad8a\nclje.user=\n\n\n\n\nOr alternatively you can use the \nbin/clojerl\n command for the same purpose:\n\n\nbin/clojerl", 
             "title": "Getting Started"
         }, 
         {
             "location": "/getting-started/#getting-started", 
-            "text": "Build  clojerl  from source (requires  Erlang/OTP 18+  and  rebar3 ):  git clone https://github.com/jfacorro/clojerl\ncd clojerl\nmake  Running  make repl  will start the REPL and show its prompt:  Clojure 0.0.0-974.592ad8a\nclje.user=   Or alternatively you can use the  bin/clojerl  command for the same purpose:  bin/clojerl --clojure.main -r", 
+            "text": "Build  clojerl  from source (requires  Erlang/OTP 18+  and  rebar3 ):  git clone https://github.com/jfacorro/clojerl\ncd clojerl\nmake  Running  make repl  will start the REPL and show its prompt:  Clojure 0.0.0-974.592ad8a\nclje.user=   Or alternatively you can use the  bin/clojerl  command for the same purpose:  bin/clojerl", 
             "title": "Getting Started"
         }, 
         {
