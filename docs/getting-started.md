@@ -13,4 +13,4 @@ Running `make repl` will start the REPL and show its prompt:
 
 Or alternatively you can use the `bin/clojerl` command for the same purpose:
 
-    bin/clojerl --clojure.main -r
+    bin/clojerl
