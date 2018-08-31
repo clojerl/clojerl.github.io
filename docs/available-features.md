@@ -39,6 +39,7 @@ For a detailed list on the differences between Clojerl and Clojure please check
     - `clojure.core`
     - `clojure.core.server`
     - `clojure.data`
+    - `clojure.edn`
     - `clojure.erlang.io`
     - `clojure.instant`
     - `clojure.repl`
@@ -53,6 +54,7 @@ For a detailed list on the differences between Clojerl and Clojure please check
     - `clojure.walk`
     - `clojure.xml`
     - `clojure.zip`
+- **Transducers** (not stateful)
 
 ## Missing
 
@@ -67,9 +69,8 @@ For a detailed list on the differences between Clojerl and Clojure please check
 - **Data Structures**
     - StructMaps
     - Map namespace syntax
-- **Transducers**
+- **Transducers** (stateful)
 - **Clojure Libraries**
-    - `clojure.edn`
     - `clojure.erlang.erldocs`
     - `clojure.erlang.shell`
     - `clojure.core.reducers`
