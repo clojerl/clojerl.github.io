@@ -39,9 +39,9 @@ There is a REPL available just like Clojure's.
 ## Functional Programming
 
 Since the Erlang VM already includes native immutable data structures,
-Clojerl includes most of the immutable data structures as Clojure.
-Some of them are implemented based on other immutable data structures
-(e.g. sorted sets).
+Clojerl includes most of the same immutable data structures present in
+Clojure. Some of them are implemented based on other immutable data
+structures (e.g. sorted sets).
 
 ## Lisp
 
@@ -63,33 +63,34 @@ Hosted on the Erlang VM.
 
 ## Getting Started
 
-[Getting started](https://github.com/jfacorro/clojerl#getting-started).
+[Getting started][getting-started].
 
 ## The Reader
 
 - Numbers
-  - All integer numbers are mapped to Erlang's representation, which
-    are arbitrary precision integers.
-  - Numbers with a decimal part are mapped to Erlang's representation
-    of floating point numbers.
-  - Ratio and BigDecimal are not supported.
+    - All integer numbers are mapped to Erlang's representation, which
+      are arbitrary precision integers.
+    - Numbers with a decimal part are mapped to Erlang's representation
+      of floating point numbers.
+    - Ratio and BigDecimal are not supported.
 - Characters are represented as single-character strings.
 - `nil` is currently mapped to the `:undefined` keyword. This is
-    because `:undefined` is generally used in Erlang to specify
-    'nothing/no-value'.
+  because `:undefined` is generally used in Erlang to specify
+  'nothing/no-value'.
 - `true` and `false` are equivalent to `:true` and `:false`
   respectively.
 - Lists, Vectors, Maps and Sets are the same as in Clojure. There is
-  no support yet for the 'Map namespace syntax'.
+  no support yet for the [Map namespace syntax][map-ns-syntax].
 - Macro characters
-  - Because there is no character type in Erlang, `\` produces a
-    single-character string.
+    - Because there is no character type in Erlang, `\` produces a
+      single-character string.
 
 ## The REPL and main
 
-- The `bin/clojure.main` script shows how it is possible to use
-  the features provided by the `clojure.main` namespace.
-- The socket-based REPL is currently not available.
+- See [Getting started][getting-started] for instructions on the
+  Clojerl REPL.
+- The `bin/clojerl` and `bin/clje` scripts can be used the same
+  as `bin/clojure` and `bin/clj`.
 
 ## Evaluation
 
@@ -97,42 +98,42 @@ Hosted on the Erlang VM.
 
 ## Special Forms
 
-The following ClojureScript special forms are identical to their
+The following Clojerl special forms are identical to their
 Clojure cousins: `if`, `do`, `let`, `letfn`, `quote` and `loop`.
 
 - `fn`
-  - Compile to an Erlang function and therefore can't have any
-    metadata.
+    - Compile to an Erlang function and therefore can't have any
+      metadata.
 - `recur`
-  - `recur` is compiled to an actual recursive call that is only
-    allowed in tail position, since the Erlang VM implements tail call
-    optimization.
+    - `recur` is compiled to an actual recursive call that is only
+      allowed in tail position, since the Erlang VM implements tail call
+      optimization.
 - `def`
-  - When the init expression is a `fn`, `def` produces one or more
-    Erlang functions, depending on the arities specified in the `fn`
-    declaration.
-  - When not an `fn`, the init expression (**which is evaluated at
-    compile-time**) *must* return a constant literal, otherwise it's a
-    compile-time error.
+    - When the init expression is a `fn`, `def` produces one or more
+      Erlang functions, depending on the arities specified in the `fn`
+      declaration.
+    - When not an `fn`, the init expression (**which is evaluated at
+      compile-time**) *must* return a constant literal, otherwise it's a
+      compile-time error.
 - `throw`
-  - There is no error type in Erlang, any value can be thrown.
+    - There is no error type in Erlang, any value can be thrown.
 - `try..catch..finally`
-  - An exception in Erlang consists of three things: the class of the
-    exception (`throw`, `error` or `exit`), the exit reason and the
-    stack-trace. There is no specific type for exceptions.
-  - The spec for the `catch` clause is `(catch error-type error &
-    body)`, where `error-type` is one of the keywords `:throw`,
-    `:error`, `:exit` or `_`. The last one will catch all the error
-    types.
+    - An exception in Erlang consists of three things: the class of the
+      exception (`throw`, `error` or `exit`), the exit reason and the
+      stack-trace. There is no specific type for exceptions.
+    - The spec for the `catch` clause is `(catch error-type error &
+      body)`, where `error-type` is one of the keywords `:throw`,
+      `:error`, `:exit` or `_`. The last one will catch all the error
+      types.
 - `var`
-  - Vars are not reified as in Clojure, they are more similar to what
-    ClojureScript does, which returns compile time information about
-    the var.
+    - Vars are not reified as in Clojure, they are more similar to what
+      ClojureScript does, which returns compile time information about
+      the var.
 - `monitor-enter`, `monitor-exit`, and `locking` are not implemented.
 
 ## Macros
 
-Macro in Clojerl work the same as in Clojure.
+Macros in Clojerl work the same as in Clojure.
 
 ## Other Useful Functions and Macros
 
@@ -142,20 +143,25 @@ Macro in Clojerl work the same as in Clojure.
 
 - `nil`'s type is `clojerl.Nil`. It is equivalent to `:undefined`.
 - Numbers
-  - All integers are Erlang integers (arbitrary precision).
+    - All integers are Erlang integers (arbitrary precision).
 - Strings are UTF-8 encoded Erlang binaries.
 - Characters are single-char strings.
 - Collections
-  - Clojerl uses the same hash computations as Clojure.
-  - When possible the native Erlang data structure is used (i.e. map,
-    list, tuple).
-    - List uses an Erlang list.
-    - Vector uses the `array` Erlang module.
-    - Map uses an Erlang map.
-    - Sorted Maps use Robert Virding's implementation of red-black
-      trees.
-    - Sets use Erlang maps.
-    - StructMap and ArrayMap are currently not implemented.
+    - Clojerl uses the same hash computations as Clojure.
+    - When possible a native Erlang data structure is used (i.e. map,
+      list, tuple) in the underlying implementation.
+        - List uses an Erlang list.
+        - Vector uses the `array` Erlang module.
+        - Map uses an Erlang map.
+        - Sorted Maps use Robert Virding's implementation of red-black
+          trees.
+        - Sets use Erlang maps.
+        - StructMap and ArrayMap are currently not implemented.
+- Literal Erlang collections can be included in code by using the
+  `#erl` dispatch reader macro:
+    - `#erl ()` Erlang lists
+    - `#erl []` Erlang tuples
+    - `#erl {}` Erlang maps
 
 ## Datatypes
 
@@ -175,7 +181,7 @@ Transients are currently not implemeted.
 
 ## Transducers
 
-Transducers are currently not implemeted.
+Stateful transducers are currently not implemeted.
 
 ## Multimethods and Hierarchies
 
@@ -203,7 +209,8 @@ in order to work in Clojerl.
 ## Vars and the Global Environment
 
 - Vars (i.e. `def`, `binding` and `set!`) work as in Clojure.
-- Atoms, Refs and Agents are not currently implemented.
+- Atoms are implemented in a naive way.
+- Refs and Agents are not currently implemented.
 
 ## Refs and Transactions
 
@@ -215,7 +222,7 @@ Agents are not implemented.
 
 ## Atoms
 
-Atoms are not implemented.
+Atoms have a naive implementation.
 
 ## Reducers
 
@@ -224,24 +231,23 @@ Reducers are not implemented.
 ## Host Interop
 
 - Member access
-  - All types in Clojerl have an implementation module with the same
-    name as the type. "Member access" is translated to a function call
-    to the specified function in the type's module where the first
-    argument is the value.
+    - All types in Clojerl have an implementation module with the same
+      name as the type. "Member access" is translated to a function call
+      to the specified function in the type's module where the first
+      argument is the value.
 - Type Hinting
-  - There are no primitive types in Erlang so there is no use for
-  `int`, `ints`, etc.
-  - Type hints are used to resolve the target's type at compile-time
-    and avoid having to figure out at run-time.
-- Simple XML support is currently not implemented.
+    - There are no primitive types in Erlang so there is no use for
+    `int`, `ints`, etc.
+    - Type hints are used to resolve the target's type at compile-time
+      and avoid having to figure out at run-time.
 - Calling Clojerl from Erlang
-  - Since Clojerl namespaces are Erlang modules, calling a function
-    from the `clojure.core` module is as simple as:
+    - Since Clojerl namespaces are Erlang modules, calling a function
+      from the `clojure.core` module is as simple as:
 
-    ```
-    'clojure.core':inc(1).
-    %%= 2
-    ```
+      ```
+      'clojure.core':inc(1).
+      %%= 2
+      ```
 
 ## Ahead-of-time Compilation and Class Generation
 
@@ -267,3 +273,6 @@ Reducers are not implemented.
 - `clojure.core.reducers` (Missing)
 - `clojure.spec` (Missing)
 - `clojure.pprint`
+
+[getting-started]: https://github.com/jfacorro/clojerl#getting-started
+[map-ns-syntax]: https://github.com/clojerl/clojerl/issues/325
