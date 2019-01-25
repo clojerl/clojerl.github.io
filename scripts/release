@@ -1,0 +1,23 @@
+#!/bin/bash
+
+set -ex
+
+# Build site
+make all
+
+# Move to /tmp
+rm -rf /tmp/clojerl.github.io
+mv site /tmp/clojerl.github.io
+
+# Replace site
+git co master
+rm -rf *
+mv /tmp/clojerl.github.io/* .
+
+# Commit changes
+git add .
+git commit -m "Update site"
+git push
+
+# Back to original branch
+git co mkdocs
