@@ -2,7 +2,7 @@
 
 
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="no-js">
   <head>
     
@@ -32,7 +32,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.3, mkdocs-material-3.0.3">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.2.0">
     
     
       
@@ -40,7 +40,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/application.451f80e5.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application.572ca0f0.css">
       
         <link rel="stylesheet" href="../assets/stylesheets/application-palette.22915126.css">
       
@@ -51,16 +51,17 @@
       
     
     
-      <script src="../assets/javascripts/modernizr.1aa3b519.js"></script>
+      <script src="../assets/javascripts/modernizr.8c900955.js"></script>
     
     
-      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
       
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
     <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
     
     
   </head>
@@ -98,7 +99,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="../#rationale" tabindex="1" class="md-skip">
+      <a href="#rationale" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -838,9 +839,9 @@ efficient using it than the Clojure model.</p>
 <p>There is a REPL available just like Clojure's.</p>
 <h2 id="functional-programming">Functional Programming</h2>
 <p>Since the Erlang VM already includes native immutable data structures,
-Clojerl includes most of the immutable data structures as Clojure.
-Some of them are implemented based on other immutable data structures
-(e.g. sorted sets).</p>
+Clojerl includes most of the same immutable data structures present in
+Clojure. Some of them are implemented based on other immutable data
+structures (e.g. sorted sets).</p>
 <h2 id="lisp">Lisp</h2>
 <p>Same as in Clojure.</p>
 <h2 id="runtime-polymorphism">Runtime Polymorphism</h2>
@@ -855,70 +856,87 @@ not supported.</p>
 <p><a href="https://github.com/jfacorro/clojerl#getting-started">Getting started</a>.</p>
 <h2 id="the-reader">The Reader</h2>
 <ul>
-<li>Numbers</li>
+<li>Numbers<ul>
 <li>All integer numbers are mapped to Erlang's representation, which
-    are arbitrary precision integers.</li>
+  are arbitrary precision integers.</li>
 <li>Numbers with a decimal part are mapped to Erlang's representation
-    of floating point numbers.</li>
+  of floating point numbers.</li>
 <li>Ratio and BigDecimal are not supported.</li>
+</ul>
+</li>
 <li>Characters are represented as single-character strings.</li>
 <li><code>nil</code> is currently mapped to the <code>:undefined</code> keyword. This is
-    because <code>:undefined</code> is generally used in Erlang to specify
-    'nothing/no-value'.</li>
+  because <code>:undefined</code> is generally used in Erlang to specify
+  'nothing/no-value'.</li>
 <li><code>true</code> and <code>false</code> are equivalent to <code>:true</code> and <code>:false</code>
   respectively.</li>
 <li>Lists, Vectors, Maps and Sets are the same as in Clojure. There is
-  no support yet for the 'Map namespace syntax'.</li>
-<li>Macro characters</li>
+  no support yet for the <a href="https://github.com/clojerl/clojerl/issues/325">Map namespace syntax</a>.</li>
+<li>Macro characters<ul>
 <li>Because there is no character type in Erlang, <code>\</code> produces a
-    single-character string.</li>
+  single-character string.</li>
+</ul>
+</li>
 </ul>
 <h2 id="the-repl-and-main">The REPL and main</h2>
 <ul>
-<li>The <code>bin/clojure.main</code> script shows how it is possible to use
-  the features provided by the <code>clojure.main</code> namespace.</li>
-<li>The socket-based REPL is currently not available.</li>
+<li>See <a href="https://github.com/jfacorro/clojerl#getting-started">Getting started</a> for instructions on the
+  Clojerl REPL.</li>
+<li>The <code>bin/clojerl</code> and <code>bin/clje</code> scripts can be used the same
+  as <code>bin/clojure</code> and <code>bin/clj</code>.</li>
 </ul>
 <h2 id="evaluation">Evaluation</h2>
 <ul>
 <li>Clojerl has the same evaluation rules as Clojure.</li>
 </ul>
 <h2 id="special-forms">Special Forms</h2>
-<p>The following ClojureScript special forms are identical to their
+<p>The following Clojerl special forms are identical to their
 Clojure cousins: <code>if</code>, <code>do</code>, <code>let</code>, <code>letfn</code>, <code>quote</code> and <code>loop</code>.</p>
 <ul>
-<li><code>fn</code></li>
+<li><code>fn</code><ul>
 <li>Compile to an Erlang function and therefore can't have any
-    metadata.</li>
-<li><code>recur</code></li>
+  metadata.</li>
+</ul>
+</li>
+<li><code>recur</code><ul>
 <li><code>recur</code> is compiled to an actual recursive call that is only
-    allowed in tail position, since the Erlang VM implements tail call
-    optimization.</li>
-<li><code>def</code></li>
+  allowed in tail position, since the Erlang VM implements tail call
+  optimization.</li>
+</ul>
+</li>
+<li><code>def</code><ul>
 <li>When the init expression is a <code>fn</code>, <code>def</code> produces one or more
-    Erlang functions, depending on the arities specified in the <code>fn</code>
-    declaration.</li>
+  Erlang functions, depending on the arities specified in the <code>fn</code>
+  declaration.</li>
 <li>When not an <code>fn</code>, the init expression (<strong>which is evaluated at
-    compile-time</strong>) <em>must</em> return a constant literal, otherwise it's a
-    compile-time error.</li>
-<li><code>throw</code></li>
+  compile-time</strong>) <em>must</em> return a constant literal, otherwise it's a
+  compile-time error.</li>
+</ul>
+</li>
+<li><code>throw</code><ul>
 <li>There is no error type in Erlang, any value can be thrown.</li>
-<li><code>try..catch..finally</code></li>
+</ul>
+</li>
+<li><code>try..catch..finally</code><ul>
 <li>An exception in Erlang consists of three things: the class of the
-    exception (<code>throw</code>, <code>error</code> or <code>exit</code>), the exit reason and the
-    stack-trace. There is no specific type for exceptions.</li>
+  exception (<code>throw</code>, <code>error</code> or <code>exit</code>), the exit reason and the
+  stack-trace. There is no specific type for exceptions.</li>
 <li>The spec for the <code>catch</code> clause is <code>(catch error-type error &amp;
-    body)</code>, where <code>error-type</code> is one of the keywords <code>:throw</code>,
-    <code>:error</code>, <code>:exit</code> or <code>_</code>. The last one will catch all the error
-    types.</li>
-<li><code>var</code></li>
+  body)</code>, where <code>error-type</code> is one of the keywords <code>:throw</code>,
+  <code>:error</code>, <code>:exit</code> or <code>_</code>. The last one will catch all the error
+  types.</li>
+</ul>
+</li>
+<li><code>var</code><ul>
 <li>Vars are not reified as in Clojure, they are more similar to what
-    ClojureScript does, which returns compile time information about
-    the var.</li>
+  ClojureScript does, which returns compile time information about
+  the var.</li>
+</ul>
+</li>
 <li><code>monitor-enter</code>, <code>monitor-exit</code>, and <code>locking</code> are not implemented.</li>
 </ul>
 <h2 id="macros">Macros</h2>
-<p>Macro in Clojerl work the same as in Clojure.</p>
+<p>Macros in Clojerl work the same as in Clojure.</p>
 <h2 id="other-useful-functions-and-macros">Other Useful Functions and Macros</h2>
 <ul>
 <li>Regex support is the one provided by the <code>re</code> Erlang module.</li>
@@ -926,14 +944,16 @@ Clojure cousins: <code>if</code>, <code>do</code>, <code>let</code>, <code>letfn
 <h2 id="data-structures">Data Structures</h2>
 <ul>
 <li><code>nil</code>'s type is <code>clojerl.Nil</code>. It is equivalent to <code>:undefined</code>.</li>
-<li>Numbers</li>
+<li>Numbers<ul>
 <li>All integers are Erlang integers (arbitrary precision).</li>
+</ul>
+</li>
 <li>Strings are UTF-8 encoded Erlang binaries.</li>
 <li>Characters are single-char strings.</li>
-<li>Collections</li>
+<li>Collections<ul>
 <li>Clojerl uses the same hash computations as Clojure.</li>
-<li>When possible the native Erlang data structure is used (i.e. map,
-    list, tuple).<ul>
+<li>When possible a native Erlang data structure is used (i.e. map,
+  list, tuple) in the underlying implementation.<ul>
 <li>List uses an Erlang list.</li>
 <li>Vector uses the <code>array</code> Erlang module.</li>
 <li>Map uses an Erlang map.</li>
@@ -941,6 +961,15 @@ Clojure cousins: <code>if</code>, <code>do</code>, <code>let</code>, <code>letfn
   trees.</li>
 <li>Sets use Erlang maps.</li>
 <li>StructMap and ArrayMap are currently not implemented.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Literal Erlang collections can be included in code by using the
+  <code>#erl</code> dispatch reader macro:<ul>
+<li><code>#erl ()</code> Erlang lists</li>
+<li><code>#erl []</code> Erlang tuples</li>
+<li><code>#erl {}</code> Erlang maps</li>
 </ul>
 </li>
 </ul>
@@ -959,7 +988,7 @@ Clojure cousins: <code>if</code>, <code>do</code>, <code>let</code>, <code>letfn
 <h2 id="transient-data-structures">Transient Data Structures</h2>
 <p>Transients are currently not implemeted.</p>
 <h2 id="transducers">Transducers</h2>
-<p>Transducers are currently not implemeted.</p>
+<p>Stateful transducers are currently not implemeted.</p>
 <h2 id="multimethods-and-hierarchies">Multimethods and Hierarchies</h2>
 <ul>
 <li>Multimethods works as in Clojure.</li>
@@ -979,35 +1008,41 @@ in order to work in Clojerl.</p>
 <h2 id="vars-and-the-global-environment">Vars and the Global Environment</h2>
 <ul>
 <li>Vars (i.e. <code>def</code>, <code>binding</code> and <code>set!</code>) work as in Clojure.</li>
-<li>Atoms, Refs and Agents are not currently implemented.</li>
+<li>Atoms are implemented in a naive way.</li>
+<li>Refs and Agents are not currently implemented.</li>
 </ul>
 <h2 id="refs-and-transactions">Refs and Transactions</h2>
 <p>Refs and Transactions are not implemented.</p>
 <h2 id="agents">Agents</h2>
 <p>Agents are not implemented.</p>
 <h2 id="atoms">Atoms</h2>
-<p>Atoms are not implemented.</p>
+<p>Atoms have a naive implementation.</p>
 <h2 id="reducers">Reducers</h2>
 <p>Reducers are not implemented.</p>
 <h2 id="host-interop">Host Interop</h2>
 <ul>
-<li>Member access</li>
+<li>Member access<ul>
 <li>All types in Clojerl have an implementation module with the same
-    name as the type. "Member access" is translated to a function call
-    to the specified function in the type's module where the first
-    argument is the value.</li>
-<li>Type Hinting</li>
+  name as the type. "Member access" is translated to a function call
+  to the specified function in the type's module where the first
+  argument is the value.</li>
+</ul>
+</li>
+<li>Type Hinting<ul>
 <li>There are no primitive types in Erlang so there is no use for
-  <code>int</code>, <code>ints</code>, etc.</li>
+<code>int</code>, <code>ints</code>, etc.</li>
 <li>Type hints are used to resolve the target's type at compile-time
-    and avoid having to figure out at run-time.</li>
-<li>Simple XML support is currently not implemented.</li>
-<li>Calling Clojerl from Erlang</li>
+  and avoid having to figure out at run-time.</li>
+</ul>
+</li>
 <li>
-<p>Since Clojerl namespaces are Erlang modules, calling a function
-    from the <code>clojure.core</code> module is as simple as:</p>
+<p>Calling Clojerl from Erlang</p>
+<ul>
+<li>Since Clojerl namespaces are Erlang modules, calling a function
+  from the <code>clojure.core</code> module is as simple as:</li>
+</ul>
 <p><code>'clojure.core':inc(1).
-%%= 2</code></p>
+  %%= 2</code></p>
 </li>
 </ul>
 <h2 id="ahead-of-time-compilation-and-class-generation">Ahead-of-time Compilation and Class Generation</h2>
@@ -1092,9 +1127,9 @@ in order to work in Clojerl.</p>
       
     </div>
     
-      <script src="../assets/javascripts/application.583bbe55.js"></script>
+      <script src="../assets/javascripts/application.b41f3d20.js"></script>
       
-      <script>app.initialize({version:"1.0.3",url:{base:".."}})</script>
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
       
     
     
