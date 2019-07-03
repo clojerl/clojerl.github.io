@@ -16,6 +16,8 @@ For a detailed list on the differences between Clojerl and Clojure please check
     - Erlang: `receive*`, `erl-binary*`, `erl-list*`, `erl-alias*`,
       `erl-on-load*`
 - **Multi-method**
+- **Reader**
+    - Namespaced maps
 - **Data Structures**
     - Clojure
         - ChunkedCons
@@ -35,6 +37,7 @@ For a detailed list on the differences between Clojerl and Clojure please check
         - Tuple
 - **Concurrency**
     - Atom (naive implementation)
+    - Delay (naive implementation)
 - **Clojure Libraries**
     - `clojure.core`
     - `clojure.core.server`
@@ -63,12 +66,8 @@ For a detailed list on the differences between Clojerl and Clojure please check
 - **Concurrency**
     - Ref
     - Agent
-    - Delay
     - Future
     - Promise
-- **Data Structures**
-    - StructMaps
-    - Map namespace syntax
 - **Clojure Libraries**
     - `clojure.erlang.erldocs`
     - `clojure.erlang.shell`
@@ -81,5 +80,8 @@ For a detailed list on the differences between Clojerl and Clojure please check
     - Volatile
 - **Data Structures**
     - Transient collections
+    - StructMaps (see why [here][structmaps])
 - **Math**
     - unchecked
+
+[structmaps]: https://clojure.org/reference/data_structures#StructMaps

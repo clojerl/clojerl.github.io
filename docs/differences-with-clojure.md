@@ -151,12 +151,15 @@ Macros in Clojerl work the same as in Clojure.
     - When possible a native Erlang data structure is used (i.e. map,
       list, tuple) in the underlying implementation.
         - List uses an Erlang list.
-        - Vector uses the `array` Erlang module.
+        - Vector uses `clj_vector`, which is an Erlang implementation
+          of Clojure's persistent vector.
         - Map uses an Erlang map.
         - Sorted Maps use Robert Virding's implementation of red-black
           trees.
         - Sets use Erlang maps.
-        - StructMap and ArrayMap are currently not implemented.
+        - StructMap will not be implemented since "most uses of
+          StructMaps would now be better served by records".
+        - ArrayMap's closest relative in Clojerl is TupleMap.
 - Literal Erlang collections can be included in code by using the
   `#erl` dispatch reader macro:
     - `#erl ()` Erlang lists
