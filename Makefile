@@ -1,5 +1,5 @@
 all:
-	mkdocs build
+	mkdocs build -d /tmp/clojerl.github.io
 
 serve:
 	mkdocs serve
