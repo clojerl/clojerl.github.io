@@ -955,12 +955,15 @@ Clojure cousins: <code>if</code>, <code>do</code>, <code>let</code>, <code>letfn
 <li>When possible a native Erlang data structure is used (i.e. map,
   list, tuple) in the underlying implementation.<ul>
 <li>List uses an Erlang list.</li>
-<li>Vector uses the <code>array</code> Erlang module.</li>
+<li>Vector uses <code>clj_vector</code>, which is an Erlang implementation
+  of Clojure's persistent vector.</li>
 <li>Map uses an Erlang map.</li>
 <li>Sorted Maps use Robert Virding's implementation of red-black
   trees.</li>
 <li>Sets use Erlang maps.</li>
-<li>StructMap and ArrayMap are currently not implemented.</li>
+<li>StructMap will not be implemented since "most uses of
+  StructMaps would now be better served by records".</li>
+<li>ArrayMap's closest relative in Clojerl is TupleMap.</li>
 </ul>
 </li>
 </ul>
