@@ -38,6 +38,8 @@ For a detailed list on the differences between Clojerl and Clojure please check
 - **Concurrency**
     - Atom (naive implementation)
     - Delay (naive implementation)
+    - Future
+    - Promise
 - **Clojure Libraries**
     - `clojure.core`
     - `clojure.core.server`
@@ -66,8 +68,6 @@ For a detailed list on the differences between Clojerl and Clojure please check
 - **Concurrency**
     - Ref
     - Agent
-    - Future
-    - Promise
 - **Clojure Libraries**
     - `clojure.erlang.erldocs`
     - `clojure.erlang.shell`
