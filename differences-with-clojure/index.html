@@ -930,10 +930,13 @@ Clojure cousins: <code>if</code>, <code>do</code>, <code>let</code>, <code>letfn
 <li><code>var</code><ul>
 <li>Vars are not reified as in Clojure, they are more similar to what
   ClojureScript does, which returns compile time information about
-  the var.</li>
+  the var, and during runtime the information available is static
+  (i.e. can't be modified without recompiling).</li>
+<li>Vars can't have watches or a validator.</li>
+<li>It's not possible to change the root binding of a Var.</li>
 </ul>
 </li>
-<li><code>monitor-enter</code>, <code>monitor-exit</code>, and <code>locking</code> are not implemented.</li>
+<li><code>monitor-enter</code>, <code>monitor-exit</code>, and <code>locking</code> are not supported.</li>
 </ul>
 <h2 id="macros">Macros</h2>
 <p>Macros in Clojerl work the same as in Clojure.</p>
@@ -1010,16 +1013,22 @@ runtime for inspection, as in Clojure.</p>
 in order to work in Clojerl.</p>
 <h2 id="vars-and-the-global-environment">Vars and the Global Environment</h2>
 <ul>
-<li>Vars (i.e. <code>def</code>, <code>binding</code> and <code>set!</code>) work as in Clojure.</li>
-<li>Atoms are implemented in a naive way.</li>
-<li>Refs and Agents are not currently implemented.</li>
+<li><code>def</code>, <code>binding</code> and <code>set!</code> work as in Clojure<ul>
+<li><code>def</code> yields the Var itself as in Clojure.</li>
+<li>Root bindings can't be modified (e.g. with <code>alter-var-root</code>
+  or <code>with-redefs</code>).</li>
+<li>Vars can't have watches or a validator.</li>
+</ul>
+</li>
+<li>Atom and Agent implementations are experimental.</li>
+<li>Refs are not currently implemented.</li>
 </ul>
 <h2 id="refs-and-transactions">Refs and Transactions</h2>
 <p>Refs and Transactions are not implemented.</p>
 <h2 id="agents">Agents</h2>
-<p>Agents are not implemented.</p>
+<p>Agent implementation is experimental.</p>
 <h2 id="atoms">Atoms</h2>
-<p>Atoms have a naive implementation.</p>
+<p>Atom implementation is experimental.</p>
 <h2 id="reducers">Reducers</h2>
 <p>Reducers are not implemented.</p>
 <h2 id="host-interop">Host Interop</h2>
