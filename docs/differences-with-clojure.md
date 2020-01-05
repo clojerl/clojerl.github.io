@@ -128,8 +128,11 @@ Clojure cousins: `if`, `do`, `let`, `letfn`, `quote` and `loop`.
 - `var`
     - Vars are not reified as in Clojure, they are more similar to what
       ClojureScript does, which returns compile time information about
-      the var.
-- `monitor-enter`, `monitor-exit`, and `locking` are not implemented.
+      the var, and during runtime the information available is static
+      (i.e. can't be modified without recompiling).
+    - Vars can't have watches or a validator.
+    - It's not possible to change the root binding of a Var.
+- `monitor-enter`, `monitor-exit`, and `locking` are not supported.
 
 ## Macros
 
@@ -211,9 +214,13 @@ in order to work in Clojerl.
 
 ## Vars and the Global Environment
 
-- Vars (i.e. `def`, `binding` and `set!`) work as in Clojure.
-- Atoms are implemented in a naive way.
-- Refs and Agents are not currently implemented.
+- `def`, `binding` and `set!` work as in Clojure
+    - `def` yields the Var itself as in Clojure.
+    - Root bindings can't be modified (e.g. with `alter-var-root`
+      or `with-redefs`).
+    - Vars can't have watches or a validator.
+- Atom and Agent implementations are experimental.
+- Refs are not currently implemented.
 
 ## Refs and Transactions
 
@@ -221,11 +228,11 @@ Refs and Transactions are not implemented.
 
 ## Agents
 
-Agents are not implemented.
+Agent implementation is experimental.
 
 ## Atoms
 
-Atoms have a naive implementation.
+Atom implementation is experimental.
 
 ## Reducers
 
