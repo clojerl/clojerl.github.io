@@ -36,10 +36,12 @@ For a detailed list on the differences between Clojerl and Clojure please check
         - List
         - Tuple
 - **Concurrency**
-    - Atom (naive implementation)
-    - Delay (naive implementation)
+    - Atom (experimental)
+    - Agent (experimental)
+    - Delay (experimental)
     - Future
     - Promise
+    - CountDownLatch (experimental)
 - **Clojure Libraries**
     - `clojure.core`
     - `clojure.core.server`
@@ -61,13 +63,12 @@ For a detailed list on the differences between Clojerl and Clojure please check
     - `clojure.zip`
 - **Transducers**
 
-## Missing
+## Not Implemented
 
 - **Multi-method**
     - Hierarchies
 - **Concurrency**
-    - Ref
-    - Agent
+    - Ref (no plans for implementation)
 - **Clojure Libraries**
     - `clojure.erlang.erldocs`
     - `clojure.erlang.shell`
