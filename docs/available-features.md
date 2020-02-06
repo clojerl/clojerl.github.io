@@ -5,7 +5,7 @@ available, the ones that are still missing and those that can't or won't be
 supported.
 
 For a detailed list on the differences between Clojerl and Clojure please check
-[here](differences-with-clojure).
+[here](../differences-with-clojure).
 
 ## Implemented
 
