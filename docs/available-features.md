@@ -1,18 +1,18 @@
 # Available Features
 
-We provide here a list of the features that are already implemented and
-available, the ones that are still missing and those that can't or won't be
-supported.
+We provide here a list of the features that are already implemented
+and available, the ones that are still missing and those that can't or
+won't be supported.
 
-For a detailed list on the differences between Clojerl and Clojure please check
-[here](../differences-with-clojure).
+For a detailed list on the differences between Clojerl and Clojure
+please check [here](../differences-with-clojure).
 
 ## Implemented
 
 - **Special Forms**
-    - Clojure: `def`, `do`, `fn*`, `if`, `quote`, `let*`, `letfn*`, `loop*`,
-      `recur`, `case*`, `throw`, `try`, `var`, `import*`, `new`, `deftype*`,
-      `defprotocol*`, `extend-type*`, `.`
+    - Clojure: `def`, `do`, `fn*`, `if`, `quote`, `let*`, `letfn*`,
+      `loop*`, `recur`, `case*`, `throw`, `try`, `var`, `import*`,
+      `new`, `deftype*`, `defprotocol*`, `extend-type*`, `.`, `reify*`
     - Erlang: `receive*`, `erl-binary*`, `erl-list*`, `erl-alias*`,
       `erl-on-load*`
 - **Multi-method**
@@ -77,6 +77,8 @@ For a detailed list on the differences between Clojerl and Clojure please check
 
 ## Unsupported
 
+- **Special Forms**
+  - Clojure: `proxy`
 - **Concurrency**
     - Volatile
 - **Data Structures**
