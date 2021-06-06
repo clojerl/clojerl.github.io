@@ -78,7 +78,7 @@ please check [here](../differences-with-clojure).
 ## Unsupported
 
 - **Special Forms**
-  - Clojure: `proxy`
+    - `proxy`
 - **Concurrency**
     - Volatile
 - **Data Structures**
